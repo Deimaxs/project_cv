@@ -1,4 +1,10 @@
 dataset/
 __pycache__/
+venv/
 
-animales/
+fnl_dataset/
+orig_dataset/
+
+
+*.json
+*.csv
