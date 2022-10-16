@@ -5,6 +5,8 @@ venv/
 fnl_dataset/
 orig_dataset/
 
-
+*.zip
 *.json
 *.csv
+*.txt
+*.record

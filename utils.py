@@ -59,7 +59,9 @@ def json_to_csv(ruta):
 
     for img in data:
         width, height = img["label"][0]["original_width"], img["label"][0]["original_height"]
-        image=img["image"]
+        image=os.path.split(img["image"])[1]
+        image=image[image.find("-")+1:]
+        
         for i in img["label"]:
             name = i["rectanglelabels"][0]
             xmin = i["x"] * width / 100
