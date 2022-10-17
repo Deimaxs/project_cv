@@ -2,6 +2,7 @@ import utils
 import json
 import pickle
 import pandas as pd
+import os
 
 
 # utils.rename_dataset("dataset")
@@ -9,5 +10,5 @@ import pandas as pd
 # utils.json_to_csv("labelStudio_train.json")
 # utils.json_to_csv("labelStudio_test.json")
 
-# a=pd.DataFrame(pd.read_csv("labelStudio_testcopia.csv"))
-# print(a)
+#utils.raise_tfrecords("labelStudio_train.csv","labelStudio_test.csv")
+
