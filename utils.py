@@ -9,6 +9,19 @@ import random
 import json
 import pandas as pd
 
+from __future__ import division
+from __future__ import print_function
+from __future__ import absolute_import
+
+import io
+import tensorflow as tf
+import sys
+sys.path.append("../../models/research")
+
+from PIL import Image
+from object_detection.utils import dataset_util
+from collections import namedtuple, OrderedDict
+
 
 def rename_dataset(ruta):
     '''Renombra los archivos del dataset, cada archivo recibirá el nombre de la carpeta que 
@@ -199,6 +212,7 @@ def raise_tfrecords(ruta_train, ruta_test):
         output_path = "train.record"
         path = "fnl_dataset/train"
         
+        global label_map
         label_map = create_labelmap(ruta_train)
         writer = tf.io.TFRecordWriter(output_path)
         examples = pd.read_csv(ruta_train)

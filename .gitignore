@@ -10,3 +10,4 @@ orig_dataset/
 *.csv
 *.txt
 *.record
+*.pbtxt

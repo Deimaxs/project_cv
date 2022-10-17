@@ -10,5 +10,5 @@ import os
 # utils.json_to_csv("labelStudio_train.json")
 # utils.json_to_csv("labelStudio_test.json")
 
-#utils.raise_tfrecords("labelStudio_train.csv","labelStudio_test.csv")
+utils.raise_tfrecords("labelStudio_train.csv","labelStudio_test.csv")
 
