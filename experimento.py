@@ -1,13 +1,19 @@
 #--------------------Dependencias/librerias necesarias--------------------
+# Instalarlas en este orden
+
 # !pip install avro-python3
+# !pip install tensorflow                               Agregada
 # !pip install tf_slim==1.1.0
 # !pip install tf-models-official==2.7.0
-# !pip install lvis
+
 # !pip install tensorflow_io==0.23.1
-# !pip install keras==2.7.0
-# !pip install opencv-python-headless==4.5.2.52
+# !pip install keras==2.10.0
+# !pip install opencv-python-headless==4.5.1.48         Error
+# !pip install lvis
 
 # !pip install tensorflow-object-detection-api
+
+# !pip install pandas
 #-------------------------------------------------------------------------
 
 
@@ -93,9 +99,9 @@ def create_tf_example(group, path):
     return tf_example
 
 #--------------------------Change only this part--------------------------
-output_path = "train.record"
-csv_input = "labelStudio_train.csv"
-path = "fnl_dataset/train"
+output_path = "test.record"
+csv_input = "labelStudio_test.csv"
+path = "fnl_dataset/test"
 #-------------------------------------------------------------------------
 
 
