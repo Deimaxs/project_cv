@@ -1,6 +1,7 @@
 dataset/
 __pycache__/
 venv/
+dataset_validation/
 
 fnl_dataset/
 orig_dataset/
@@ -11,3 +12,4 @@ orig_dataset/
 *.txt
 *.record
 *.pbtxt
+*.mp4

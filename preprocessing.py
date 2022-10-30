@@ -10,5 +10,7 @@ import os
 # utils.json_to_csv("labelStudio_train.json")
 # utils.json_to_csv("labelStudio_test.json")
 
+utils.execution_colab()
+
 
 
