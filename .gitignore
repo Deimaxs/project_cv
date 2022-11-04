@@ -1,15 +1,17 @@
-dataset/
 __pycache__/
-venv/
+dataset/
 dataset_validation/
 
 fnl_dataset/
 orig_dataset/
 
+tester_videos/
+venv/
+inputs/
+
 *.zip
 *.json
 *.csv
-*.txt
 *.record
 *.pbtxt
 *.mp4
