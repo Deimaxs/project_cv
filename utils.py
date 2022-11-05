@@ -1,6 +1,17 @@
 """---------------------------------------------------------------------------------------------------
-Este script contiene las funciones necesarias para la implementacion de modelos de deep learning 
-en el campo de la vision artificial.
+Este script contiene las funciones:
+    rename_dataset, 
+    split_dataset, 
+    json_to_csv, 
+    create_labelmap, 
+    *create_tfrecords,
+    *conf_pipeline,
+    *train_model,
+    *exporter_model,
+    *process_image,
+    *process_video
+    
+ *Funciones ejecutadas en google colaboratory
 ---------------------------------------------------------------------------------------------------"""
 
 import os
@@ -187,12 +198,10 @@ def class_text_to_int(row_label, labelmap):
     else:
         None
 
-
 def split(df, group):
     data = namedtuple('data', ['filename', 'object'])
     gb = df.groupby(group)
     return [data(filename, gb.get_group(x)) for filename, x in zip(gb.groups.keys(), gb.groups)]
-
 
 def create_tf_example(group, path):
     with tf.io.gfile.GFile(os.path.join(path, '{}'.format(group.filename)), 'rb') as fid:
@@ -287,7 +296,6 @@ def create_tfrecords(train_csv_path, test_csv_path, compress_and_download=False)
         %cd /content
         !zip inputs_model.zip label_map.pbtxt train.record test.record 
         files.download("/content/inputs_model.zip")
-
 
 
 def download_model():
