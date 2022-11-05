@@ -39,7 +39,7 @@ def read_label_map():
 
 class Model():
     def __init__(self):
-        detect_fn = tf.saved_model.load("model/fine_tuned_model/saved_model")
+        detect_fn = tf.saved_model.load("model/fnl_model/saved_model")
         self.detect_fn = detect_fn
     
     def predict(self, video, skip, thres, func, vis):
