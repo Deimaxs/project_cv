@@ -1,8 +1,9 @@
 <!-- PROJECT LOGO -->
 <br />
+
 <p align="center">
-  <a href="logo4.png" alt="Logo" width="300">
-  </a>
+
+![Logo WhiteFox](https://raw.githubusercontent.com/Deimaxs/project_cv/main/logo4.png)
 
   <h3 align="center">ProyectCV</h3>
 
@@ -13,14 +14,13 @@
 </p>
 
 
+
 ## Introducción
 
-El objetivo del proyecto es realizar una API en la Google Cloud Platform, la cual recibe un video codificado en base64 y aplicará en él ya sea un modelo de Trackeo de objetos, o un modelo de Conteo de objetos en umbral.
-
-Este proyecto hace uso de la librería Dyno.py, la cual está en construcción en este momento.
+El objetivo del proyecto es realizar una API en la Google Cloud Platform, la cual recibe un video codificado en base64 y aplicará en él ya sea un modelo de trackeo de objetos en umbral, o un modelo de conteo de objetos.
 
 
-* entrada
+* Entrada
 ```json
 {
   "video": "Video de entrada en base64",
@@ -31,7 +31,7 @@ Este proyecto hace uso de la librería Dyno.py, la cual está en construcción e
 }
 ```
 
-* salida
+* Salida
 ```json
 {
   "video": "Video de salida en base64",
@@ -56,7 +56,7 @@ Este proyecto hace uso de la librería Dyno.py, la cual está en construcción e
 <!-- _For more examples, please refer to the [Examples packages](https://github.com/avmmodules/AVMWeather/tree/main/examples)_ -->
 
 
-* Haciendo uso del labelStudio etiquetamos los sets de train y test, al finalizar descargamos los JSON Mini
+* Haciendo uso del labelStudio etiquetamos los sets de train y test, al finalizar descargamos los JSON Mini.
 
 * Ejecutamos los metodos json_to_csv, como se muestra en el archivo main.py
 
@@ -71,17 +71,17 @@ Este proyecto hace uso de la librería Dyno.py, la cual está en construcción e
 
 * Luego haciendo uso del process.ipynb en colab, ejecutamos las lineas en orden hasta llegar al apartado final donde se puede personalizar las funciones a gusto del usuario para testear y corroborar la eficiencia del modelo.
 
-* En VERTEX IA de gcp creamos un notebook, dentro del entrono generado copiamos la carpeta deploy
+* En VERTEX IA de gcp creamos un notebook, dentro del entrono generado copiamos la carpeta deploy.
 
-* Dentro de la carpeta deploy copiamos el archivo.zip con nuestro modelo obtenido con la funcion exporter_model del colab y lo descomprimimos
+* Dentro de la carpeta deploy copiamos el archivo.zip con nuestro modelo obtenido con la función exporter_model del colab y lo descomprimimos.
 
-* Creamos un artifact en gcp
+* Creamos un artifact en gcp.
 
   ```python
   gcloud artifacts repositories create [NAME_FOLDER] --repository-format=docker --location=us-central1 --description="Docker repository"
   ```
 
-* Haciendo uso de la carpeta deploy y de la plataforma GCP, generamos la imagen del contenedor para desplegar
+* Haciendo uso de la carpeta deploy y de la plataforma GCP, generamos la imagen del contenedor para desplegar.
 
   ```python
   gcloud builds submit --tag us-central1-docker.pkg.dev/[PROJECT_ID]/[NAME_FOLDER]/[NAME_IMAGE]:[NAME_TAG] --timeout=6000 
@@ -95,11 +95,11 @@ Este proyecto hace uso de la librería Dyno.py, la cual está en construcción e
 <!-- CONTACT -->
 ## Contact
 
-Email: avmmodules@gmail.com
+Email: mateo.sanchezalzate@gmail.com
 
 Portfolio: 
 [...](https://www.linkedin.com/in/mateo-sanchez-770019256/ "...")
 
 LinkedIn: 
-[Mateo Sanchez](https://www.linkedin.com/in/mateo-sanchez-770019256/ "Mateo Sanchez")
+[Mateo Sánchez](https://www.linkedin.com/in/mateo-sanchez-770019256/ "Mateo Sánchez")
 
