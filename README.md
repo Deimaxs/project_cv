@@ -17,7 +17,7 @@
 
 ## Introducción
 
-El objetivo del proyecto es realizar una API en la Google Cloud Platform, la cual recibe un video codificado en base64 y aplicará en él ya sea un modelo de trackeo de objetos en umbral, o un modelo de conteo de objetos.
+El objetivo del proyecto es realizar una API en la Google Cloud Platform (GCP), la cual recibe un video codificado en base64 y aplicará en él un modelo de seguimiento de direccion de objetos a traves de un umbral o un modelo de conteo de objetos.
 
 
 * Entrada
@@ -48,7 +48,6 @@ El objetivo del proyecto es realizar una API en la Google Cloud Platform, la cua
   ```python
   import utils
 
-  #Empezamos renombrando y diviendo el dataset en train y test.
   utils.rename_dataset("dataset")
   utils.split_dataset("dataset", 0.8)
   ```
@@ -60,30 +59,30 @@ El objetivo del proyecto es realizar una API en la Google Cloud Platform, la cua
 
 * Ejecutamos los metodos json_to_csv, como se muestra en el archivo main.py
 
-* Luego de utilizar el labelStudio para etiquetar nuestro dataset, procedemos con la creación de los inputs del modelo.
-
-  _Aprovechando la capacidad de computo de google, el resto del código fué ejecutado en Colab!!!_
-
   ```python
 	utils.json_to_csv("labelStudio_train.json")
 	utils.json_to_csv("labelStudio_test.json")
   ```
 
-* Luego haciendo uso del process.ipynb en colab, ejecutamos las lineas en orden hasta llegar al apartado final donde se puede personalizar las funciones a gusto del usuario para testear y corroborar la eficiencia del modelo.
+* Luego de utilizar el labelStudio para etiquetar nuestro dataset, procedemos con la creación de los inputs del modelo, para esto haremos uso de google colab provechando su potencia de computo.
 
-* En VERTEX IA de gcp creamos un notebook, dentro del entrono generado copiamos la carpeta deploy.
+* Utilizando el notebook process.ipynb en colab, ejecutamos las lineas en orden hasta llegar al apartado final donde se puede personalizar las funciones a gusto del usuario para testear y corroborar la eficiencia del modelo.
 
-* Dentro de la carpeta deploy copiamos el archivo.zip con nuestro modelo obtenido con la función exporter_model del colab y lo descomprimimos.
+- Deploy
 
-* Creamos un artifact en gcp.
+* En VERTEX IA de GCP creamos un notebook, dentro del entrono generado copiamos la carpeta deploy.
 
-  ```python
+* Dentro de la carpeta deploy copiamos el archivo.zip con nuestro modelo, el cual fué obtenido con la función exporter_model del colab y lo descomprimimos.
+
+* Creamos un artifact en GCP.
+
+  ```shell
   gcloud artifacts repositories create [NAME_FOLDER] --repository-format=docker --location=us-central1 --description="Docker repository"
   ```
 
 * Haciendo uso de la carpeta deploy y de la plataforma GCP, generamos la imagen del contenedor para desplegar.
 
-  ```python
+  ```shell
   gcloud builds submit --tag us-central1-docker.pkg.dev/[PROJECT_ID]/[NAME_FOLDER]/[NAME_IMAGE]:[NAME_TAG] --timeout=6000 
   ```
 
