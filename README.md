@@ -43,6 +43,8 @@ El objetivo del proyecto es realizar una API en la Google Cloud Platform (GCP), 
 <!-- USAGE EXAMPLES -->
 ## Procedimiento
 
+**Modelo**
+
 * Ejecutar los metodos rename_dataset y split_datset, como se muestra en el archivo main.py
 
   ```python
@@ -68,7 +70,7 @@ El objetivo del proyecto es realizar una API en la Google Cloud Platform (GCP), 
 
 * Utilizando el notebook process.ipynb en colab, ejecutamos las lineas en orden hasta llegar al apartado final donde se puede personalizar las funciones a gusto del usuario para testear y corroborar la eficiencia del modelo.
 
-- Deploy
+**Despliegue**
 
 * En VERTEX IA de GCP creamos un notebook, dentro del entrono generado copiamos la carpeta deploy.
 
