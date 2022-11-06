@@ -8,7 +8,7 @@
   <h3 align="center">ProyectCV</h3>
 
   <p align="center">
-    Objects tracker and counter on video (Using Dyno.py)
+    Objects tracker and counter on video
     <br />
     <br />
 </p>
