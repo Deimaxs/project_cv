@@ -38,20 +38,20 @@ El objetivo del proyecto es realizar una API en la Google Cloud Platform (GCP), 
 }
 ```
 
-
+Este script hace uso de herramientas como GCP y google colaboratory para la implementación de librerías y frameworks tales como tensorflow object-detection-API, OpenCV, Dlib entre otras.
 
 <!-- USAGE EXAMPLES -->
 ## Procedimiento
 
-**Modelo**
+**Modelo:**
 
 * Ejecutar los metodos rename_dataset y split_datset, como se muestra en el archivo main.py
 
   ```python
   import utils
 
-  utils.rename_dataset("dataset")
-  utils.split_dataset("dataset", 0.8)
+  utils.rename_dataset(path)
+  utils.split_dataset(path, %split)
   ```
 
 <!-- _For more examples, please refer to the [Examples packages](https://github.com/avmmodules/AVMWeather/tree/main/examples)_ -->
@@ -62,31 +62,33 @@ El objetivo del proyecto es realizar una API en la Google Cloud Platform (GCP), 
 * Ejecutamos los metodos json_to_csv, como se muestra en el archivo main.py
 
   ```python
-	utils.json_to_csv("labelStudio_train.json")
-	utils.json_to_csv("labelStudio_test.json")
+	utils.json_to_csv(path)
+	utils.json_to_csv(path)
   ```
 
 * Luego de utilizar el labelStudio para etiquetar nuestro dataset, procedemos con la creación de los inputs del modelo, para esto haremos uso de google colab provechando su potencia de computo.
 
 * Utilizando el notebook process.ipynb en colab, ejecutamos las lineas en orden hasta llegar al apartado final donde se puede personalizar las funciones a gusto del usuario para testear y corroborar la eficiencia del modelo.
 
-**Despliegue**
+**Despliegue:**
 
 * En VERTEX IA de GCP creamos un notebook, dentro del entrono generado copiamos la carpeta deploy.
 
 * Dentro de la carpeta deploy copiamos el archivo.zip con nuestro modelo, el cual fué obtenido con la función exporter_model del colab y lo descomprimimos.
 
-* Creamos un artifact en GCP.
+* Creamos un Artifact en GCP por medio del cloud shell.
 
   ```shell
   gcloud artifacts repositories create [NAME_FOLDER] --repository-format=docker --location=us-central1 --description="Docker repository"
   ```
 
-* Haciendo uso de la carpeta deploy y de la plataforma GCP, generamos la imagen del contenedor para desplegar.
+* Generamos la imagen del contenedor para desplegar.
 
   ```shell
   gcloud builds submit --tag us-central1-docker.pkg.dev/[PROJECT_ID]/[NAME_FOLDER]/[NAME_IMAGE]:[NAME_TAG] --timeout=6000 
   ```
+  
+* Configuramos el entorno de Cloud Run para obtener la URL del contenedor desplegado y listo para recibir peticiones.
 
 <!-- LICENSE -->
 ## License
