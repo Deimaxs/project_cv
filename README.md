@@ -20,7 +20,7 @@
 El objetivo del proyecto es realizar una API en la Google Cloud Platform (GCP), la cual recibe un video codificado en base64 y aplicará en él un modelo de seguimiento de direccion de objetos a traves de un umbral o un modelo de conteo de objetos.
 
 
-* Entrada
+* Entrada:
 ```json
 {
   "video": "Video de entrada en base64",
@@ -31,7 +31,7 @@ El objetivo del proyecto es realizar una API en la Google Cloud Platform (GCP), 
 }
 ```
 
-* Salida
+* Salida:
 ```json
 {
   "video": "Video de salida en base64",
