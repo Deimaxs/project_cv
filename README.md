@@ -3,8 +3,6 @@
 
 <p align="center">
 
-![Logo WhiteFox](https://raw.githubusercontent.com/Deimaxs/project_cv/main/logo4.png)
-
   <h3 align="center">ProyectCV</h3>
 
   <p align="center">
@@ -101,8 +99,7 @@ Este script hace uso de herramientas como GCP y google colaboratory para la impl
 Email: mateo.sanchezalzate@gmail.com
 
 Portfolio: 
-[...](https://www.linkedin.com/in/mateo-sanchez-770019256/ "...")
+[Página Web](https://deimaxs.github.io/ "Página Web")
 
 LinkedIn: 
-[Mateo Sánchez](https://www.linkedin.com/in/mateo-sanchez-770019256/ "Mateo Sánchez")
-
+[Mateo Sánchez](https://www.linkedin.com/in/mateo-sanchez-ds/ "Mateo Sánchez")
